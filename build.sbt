@@ -11,7 +11,10 @@ scalacOptions := Seq(
   "-language:_",
   "-Xlog-reflective-calls",
 
-  "-Xlog-implicits"
+  "-Xlog-implicits",
+
+  // From: https://github.com/milessabin/shapeless/wiki/Migration-guide:-shapeless-2.0.0-to-2.1.0
+  "-Yfundep-materialization"
 
   // my compiler options from ~/.sbt/0.13/global.sbt
   // "-Xlint",
@@ -22,7 +25,7 @@ scalacOptions := Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.chuusai" % "shapeless_2.10.4" % "2.1.0",
+  "com.chuusai" % "shapeless_2.10.4" % "2.0.0",
   "com.typesafe.akka" %% "akka-actor" % "2.3.7",
   "io.spray" %% "spray-can" % "1.3.3",
   "io.spray" %% "spray-routing-shapeless2" % "1.3.3"
