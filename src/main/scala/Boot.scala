@@ -2,8 +2,9 @@ package com.banno.spray
 import spray.routing.{Directive, Directives}
 import shapeless.{::, HNil}
 import akka.actor.ActorSystem
+import spray.httpx.RequestBuilding
 
-object Boot extends Directives {
+object Boot extends Directives with RequestBuilding {
   implicit val sys = ActorSystem("sys")
 
   // compiles
